@@ -8,6 +8,6 @@ function CalculateTotal() {
   let effective = baseCooldown * (1 - (total / (1 + total)));
   
   let resultsHTML = "<h3>Result:</h3>";
-  resultsHTML += "<p>Effective Cooldown = " + effective.toFixed(2) + " seconds</p>";
+  resultsHTML += "<p>Effective Cooldown is about " + effective.toFixed(2) + " seconds</p>";
   document.getElementById("results").innerHTML = resultsHTML;
 }
