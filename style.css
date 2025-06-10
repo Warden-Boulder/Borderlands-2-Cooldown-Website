@@ -1,7 +1,7 @@
-body{
+body {
   background-color: darkred;
 }
-button {
+button, #character {
   background-color: #EAE0C8;
   color: black;
   font-style: italic;
@@ -15,7 +15,7 @@ h1, h3 {
   font-style: italic;
   font-weight: bold;
 }
-p {
+p,h2 {
   color: yellow;
   font-style: italic;
 }
