@@ -5,12 +5,24 @@
 </head>
 <body>
   <h1>Borderlands 2 Action Skill Cooldown Calculator</h1>
-  <p>Action Skill Base Cooldown (in seconds) = <input type="number" id="Action" color="yellow"></input></p>
-  <p>Cooldown Percent Increase from Skills (not including skills that involve enemies) = <input type="number" id="Skills"></input></p>
+  <h2>Character Selection:</h2>
+  <select name="Character" id="character" onchange="toggleButtons()">
+    <option value="null">---Select--</option>
+    <option value="axton">Axton</option>
+    <option value="gaige">Gaige</option>
+    <option value="krieg">Krieg</option>
+    <option value="maya">Maya</option>
+    <option value="salvador">Salvador</option>
+    <option value="zero">Zer0</option>
+  </select><br>
+  <p id="cooldown-text">Base Cooldown is</p>
+  <input type="number" id="action" style="display: none;">
+  <p>Cooldown Percent Increase from Skills (Static Skills Only) = <input type="number" id="skills"></input></p>
   <p>Cooldown Percent Increase from a Class Mod = <input type="number" id="class_mod"></input></p>
-  <p>Cooldown Percent Increase from a Relic = <input type="number" id="Relic"> </input></p><br>
+  <p>Cooldown Percent Increase from a Relic = <input type="number" id="relic"> </input></p><br>
   <button onclick="CalculateTotal()"> Calculate Cooldown</button><br>
   <div id="results"></div>
   <script src="script.js"></script>
+  <script src="toggle.js"></script>
 </body>
 </html>
