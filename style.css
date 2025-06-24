@@ -1,6 +1,14 @@
 body {
   background-color: darkred;
 }
+footer {
+  color: yellow;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 14px;
+  border-top: 1px solid #b9b9c3;
+}
 button, #character {
   background-color: #EAE0C8;
   color: black;
