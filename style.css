@@ -7,18 +7,31 @@ footer {
   margin-top: 20px;
   padding: 10px;
   font-size: 14px;
+  font-style: italic;
   border-top: 1px solid yellow;
 }
-button, #character {
+
+button, #character, #game{
   background-color: #EAE0C8;
+  border-radius: 15px;
   color: black;
+  font-size: 16px;
   font-style: italic;
+}
+
+#cooldown-text {
+  font-weight: bold;
+  padding-top: 30px;
+  white-space: pre-line;
 }
 html {
   height: 100%;
   width: 100%;
 }
-h1, h3 {
+h1 {
+  text-align: center;
+}
+h1, h2, h3 {
   color: yellow;
   font-style: italic;
   font-weight: bold;
@@ -26,4 +39,8 @@ h1, h3 {
 p,h2 {
   color: yellow;
   font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
 }
