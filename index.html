@@ -4,33 +4,34 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Borderlands 2 Action Skill Cooldown Calculator</h1>
-  <h2>Character Selection:</h2>
-  <select name="Character" id="character" onchange="toggleButtons()">
-    <option value="null">---Select--</option>
+  <header>
+    <h1><em>Borderlands 2 Cooldown Calculator</em></h1>
+    <p><em>"Hello Vault Hunter and welcome to my corner of the EchoNet. This is a lightweight tool designed to help you know when your action skill will be available after each use so you can open more vaults. For peace of mind, Claptrap will have to climb stairs to get here."</em></p>
+  </header><br>
+  <h2>Vault Hunter Selection: 
+    <select name="Character" id="character" onchange="toggleButtons()">
+    <option value="null">---Select---</option>
     <option value="axton">Axton</option>
     <option value="gaige">Gaige</option>
     <option value="krieg">Krieg</option>
     <option value="maya">Maya</option>
     <option value="salvador">Salvador</option>
     <option value="zero">Zer0</option>
-  </select><br>
-  <p id="cooldown-text">Base Cooldown is</p>
+  </select></h2><br>
+  <p id="cooldown-text"></p>
   <input type="number" id="action" style="display: none;">
-  <p>Cooldown Percent Increase from Skills (Static Skills Only) = <input type="number" id="skills"></input></p>
-  <p>Cooldown Percent Increase from a Class Mod = <input type="number" id="class_mod"></input></p>
-  <p>Cooldown Percent Increase from a Relic = <input type="number" id="relic"> </input></p><br>
-  <button id = "calculate" onclick="CalculateTotal()"> Calculate Cooldown</button><br>
+  <p class="underline"><em><strong>Cooldown Buffs:</strong></em></p>
+  <p>Static Skill Buff = <input type="number" id="skills" placeholder="Static Skill % Increase"></input></p>
+  <p>Class Mod Buff = <input type="number" id="class_mod" placeholder ="Class Mod % Increase"></input></p>
+  <p>Relic Bonus = <input type="number" id="relic" placeholder="Relic % Increase"> </input></p><br>
+  <button id = "calculate" onclick="CalculateTotal()">Run the numbers</button><br>
   <div id="results"></div>
-  <script src="script.js"></script>
-  <script src="toggle.js"></script>
+  <script src="calculate.js"></script>
+  <script src="selection.js"></script>
   <footer>
-    <em>
       Developed by Warden Boulder<br>
-    Version 2<br>
-    Update Ideas:<br>
-      1. Game Selection + Character Selection Expanison
-    </em>
+      <a href="https://linktr.ee/no13boulder">Linktree</a><br>
+      Version 2<br>
   </footer>
 </body>
 </html>
