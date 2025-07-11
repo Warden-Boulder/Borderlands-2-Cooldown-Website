@@ -22,7 +22,8 @@ function toggleButtons() {
   
   if (cooldownValue) {
     actionInput.value = cooldownValue;
-    cooldownText.textContent = `Base Cooldown is ${cooldownValue} seconds`;
+    const characterName = character.charAt(0).toUpperCase() + character.slice(1);
+    cooldownText.textContent = `Vault Hunter: ${characterName}\nBase Cooldown: ${cooldownValue} seconds`;
   } else {
     actionInput.value = "";
     cooldownText.textContent = "Base Cooldown is";
