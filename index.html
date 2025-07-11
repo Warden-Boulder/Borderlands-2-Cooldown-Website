@@ -5,17 +5,34 @@
 </head>
 <body>
   <header>
-    <h1><em>Borderlands 2 Cooldown Calculator</em></h1>
+    <h1><em>Vault Hunter Toolbox</em></h1>
     <p><em>"Hello Vault Hunter and welcome to my corner of the EchoNet. This is a lightweight tool designed to help you know when your action skill will be available after each use so you can open more vaults. For peace of mind, Claptrap will have to climb stairs to get here."</em></p>
   </header><br>
   <h2>Vault Hunter Selection: 
-    <select name="Character" id="character" onchange="toggleButtons()">
+    <select name="Character" id="character" onchange="toggleCharacter()">
     <option value="null">---Select---</option>
+    <option value="amara1">Amara (Phasecast)</option>
+    <option value="amara2">Amara (Phaseflare)</option>
+    <option value="amara3">Amara (Phasegrasp)</option>
+    <option value="amara4">Amara (Phaseslam)</option>
     <option value="axton">Axton</option>
+    <option value="brick">Brick</option>
+    <option value="fl4k1">Fl4k (Fade Away)</option>
+    <option value="fl4k2">Fl4k (Gamma Burst)</option>
+    <option value="fl4k3">Fl4k (Gravity Snare)</option>
+    <option value="fl4k4">Fl4k (Rakk Attack)</option>
     <option value="gaige">Gaige</option>
     <option value="krieg">Krieg</option>
+    <option value="lilith">Lilith</option>
     <option value="maya">Maya</option>
+    <option value="mordecai">Mordecai</option>
+    <option value="moze">Moze</option>
+    <option value="roland">Roland</option>
     <option value="salvador">Salvador</option>
+    <option value="zane1">Zane (Barrier)</option>
+    <option value="zane2">Zane (Digi-Clone)</option>
+    <option value="zane3">Zane (MNTIS Shoulder Cannon)</option>
+    <option value="zane4">Zane (SNTNL)</option>
     <option value="zero">Zer0</option>
   </select></h2><br>
   <p id="cooldown-text"></p>
