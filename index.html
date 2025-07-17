@@ -11,30 +11,36 @@
   <h2>Vault Hunter Selection: 
     <select name="Character" id="character" onchange="toggleCharacter()">
     <option value="null">---Select---</option>
-    <option value="amara1">Amara (Phasecast)</option>
+    <optgroup label="Borderlands 1">
+        <option value="brick">Brick</option>
+        <option value="lilith">Lilith</option>
+        <option value="mordecai">Mordecai</option>
+        <option value="roland">Roland</option>
+    </optgroup>
+    <optgroup label="Borderlands 2">
+        <option value="Axton">Axton</option>
+        <option value="gaige">Gaige</option>
+        <option value="krieg">Krieg</option>
+        <option value="maya">Maya</option>
+        <option value="salvador">Salvador</option>
+        <option value="zero">Zer0</option>
+    </optgroup>
+    <optgroup label="Borderlands 3">
+        <option value="amara1">Amara (Phasecast)</option>
     <option value="amara2">Amara (Phaseflare)</option>
     <option value="amara3">Amara (Phasegrasp)</option>
     <option value="amara4">Amara (Phaseslam)</option>
-    <option value="axton">Axton</option>
-    <option value="brick">Brick</option>
-    <option value="fl4k1">Fl4k (Fade Away)</option>
+        <option value="fl4k1">Fl4k (Fade Away)</option>
     <option value="fl4k2">Fl4k (Gamma Burst)</option>
     <option value="fl4k3">Fl4k (Gravity Snare)</option>
     <option value="fl4k4">Fl4k (Rakk Attack)</option>
-    <option value="gaige">Gaige</option>
-    <option value="krieg">Krieg</option>
-    <option value="lilith">Lilith</option>
-    <option value="maya">Maya</option>
-    <option value="mordecai">Mordecai</option>
-    <option value="moze">Moze</option>
-    <option value="roland">Roland</option>
-    <option value="salvador">Salvador</option>
-    <option value="zane1">Zane (Barrier)</option>
+        <option value="moze">Moze</option>
+        <option value="zane1">Zane (Barrier)</option>
     <option value="zane2">Zane (Digi-Clone)</option>
     <option value="zane3">Zane (MNTIS Shoulder Cannon)</option>
     <option value="zane4">Zane (SNTNL)</option>
-    <option value="zero">Zer0</option>
-  </select></h2><br>
+    </optgroup>
+</select></h2><br>
   <p id="cooldown-text"></p>
   <input type="number" id="action" style="display: none;">
   <p class="underline"><em><strong>Cooldown Buffs:</strong></em></p>
@@ -48,7 +54,7 @@
   <footer>
       Developed by Warden Boulder<br>
       <a href="https://linktr.ee/no13boulder">Linktree</a><br>
-      Version 2<br>
+      Version 2.2<br>
   </footer>
 </body>
 </html>
