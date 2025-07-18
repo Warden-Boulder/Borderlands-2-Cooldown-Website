@@ -2,13 +2,14 @@ body {
   background-color: darkred;
 }
 footer {
+  border-top: 1px solid yellow;
   color: yellow;
-  text-align: center;
-  margin-top: 20px;
-  padding: 10px;
   font-size: 14px;
   font-style: italic;
-  border-top: 1px solid yellow;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
 }
 
 button, #character, #game{
@@ -24,13 +25,16 @@ button, #character, #game{
   padding-top: 30px;
   white-space: pre-line;
 }
+header {
+  color: yellow;
+  font-style: italic;
+  text-align: center;
+}
 html {
   height: 100%;
   width: 100%;
 }
-h1 {
-  text-align: center;
-}
+
 h1, h2, h3 {
   color: yellow;
   font-style: italic;
@@ -43,4 +47,7 @@ p,h2 {
 
 .underline {
   text-decoration: underline;
+}
+.note {
+  font-weight: bold;
 }
