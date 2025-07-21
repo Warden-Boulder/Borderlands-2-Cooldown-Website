@@ -13,7 +13,7 @@ function toggleCharacter() {
     actionskill = "Phasecast";
     cooldownValue = 22;
   } else if (character === "amara2") {
-    name = "Amara"
+    name = "Amara";
     actionskill = "Phaseflare";
     cooldownValue = 30;
   } else if (character === "amara3") {
@@ -23,15 +23,31 @@ function toggleCharacter() {
   } else if (character === "amara4") {
     name = "Amara";
     actionskill = "Phaseslam";
-    cooldownValue = 26;
+    cooldownValue = 25;
+  } else if (character === "Athena") {
+    name = "Athena";
+    actionskill = "Kinetic Aspis";
+    cooldownValue = 16;
+  } else if (character === "Aurelia") {
+    name = "Aurelia";
+    actionskill = "Cold As Ice";
+    cooldownValue = 35;
   } else if (character === "axton") {
     name = "Axton";
     actionskill = "Sabre Turret";
-    cooldownValue = 36;
+    cooldownValue = 42;
   } else if (character === "brick") {
     name = "Brick";
     actionskill = "Berserk";
     cooldownValue = 60;
+  } else if (character === "Claptrap") {
+    name = "Claptrap";
+    actionskill = "VaulHunter.EXE";
+    cooldownValue = 40;
+  } else if (character === "Jack") {
+    name = "Jack";
+    actionskill = "Expendable Assets";
+    cooldownValue = 40;
   } else if (character === "gaige") {
     name = "Gaige";
     actionskill = "Deathtrap";
@@ -39,7 +55,7 @@ function toggleCharacter() {
   } else if (character === "fl4k1") {
     name = "Fl4k";
     actionskill = "Fade Away";
-    cooldownValue = 45;
+    cooldownValue = 18;
   } else if (character === "fl4k2") {
     name = "Fl4k";
     actionskill = "Gamma Burst";
@@ -72,6 +88,10 @@ function toggleCharacter() {
     name = "Mordecai";
     actionskill = "Bloodwing";
     cooldownValue = 28;
+  } else if (character === "Nisha") {
+    name = "Nisha";
+    actionskill = "Showdown";
+    cooldownValue = 16;
   } else if (character === "roland") {
     name = "Roland";
     actionskill = "Scorpio Turret";
@@ -80,6 +100,10 @@ function toggleCharacter() {
     name = "Salvador";
     actionskill = "Gunzerking";
     cooldownValue = 42;
+  } else if (character === "Wilhelm") {
+    name = "Wilhelm";
+    actionskill = "Wolf and Saint";
+    cooldownValue = 42;
   } else if (character === "zero") {
     name = "Zer0";
     actionskill = "Decepti0n";
@@ -87,11 +111,11 @@ function toggleCharacter() {
   } else if (character === "zane1") {
     name = "Zane";
     actionskill = "Barrier";
-    cooldownValue = 24;
+    cooldownValue = 18;
   } else if (character === "zane2") {
     name = "Zane";
     actionskill = "Digi-Clone";
-    cooldownValue = 28;
+    cooldownValue = 18;
   } else if (character === "zane3") {
     name = "Zane";
     actionskill = "MNTIS Shoulder Cannon";
