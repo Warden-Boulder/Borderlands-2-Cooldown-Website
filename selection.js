@@ -11,19 +11,19 @@ function toggleCharacter() {
   if (character === "amara1") {
     name = "Amara";
     actionskill = "Phasecast";
-    cooldownValue = 22;
+    cooldownValue = 28;
   } else if (character === "amara2") {
     name = "Amara";
     actionskill = "Phaseflare";
-    cooldownValue = 30;
+    cooldownValue = 48;
   } else if (character === "amara3") {
     name = "Amara";
     actionskill = "Phasegrasp";
-    cooldownValue = 16;
+    cooldownValue = 33;
   } else if (character === "amara4") {
     name = "Amara";
     actionskill = "Phaseslam";
-    cooldownValue = 25;
+    cooldownValue = 36;
   } else if (character === "Athena") {
     name = "Athena";
     actionskill = "Kinetic Aspis";
@@ -55,7 +55,7 @@ function toggleCharacter() {
   } else if (character === "fl4k1") {
     name = "Fl4k";
     actionskill = "Fade Away";
-    cooldownValue = 18;
+    cooldownValue = 45;
   } else if (character === "fl4k2") {
     name = "Fl4k";
     actionskill = "Gamma Burst";
@@ -111,11 +111,11 @@ function toggleCharacter() {
   } else if (character === "zane1") {
     name = "Zane";
     actionskill = "Barrier";
-    cooldownValue = 18;
+    cooldownValue = 24;
   } else if (character === "zane2") {
     name = "Zane";
     actionskill = "Digi-Clone";
-    cooldownValue = 18;
+    cooldownValue = 28;
   } else if (character === "zane3") {
     name = "Zane";
     actionskill = "MNTIS Shoulder Cannon";
