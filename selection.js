@@ -3,11 +3,11 @@ function toggleCharacter() {
   const actionInput = document.getElementById("action");
   const cooldownText = document.getElementById("cooldown-text");
   const character = characterSelect.value;
-  
+
   let cooldownValue = "";
   let actionskill = "";
   let name = "";
-  
+
   if (character === "amara1") {
     name = "Amara";
     actionskill = "Phasecast";
@@ -125,7 +125,7 @@ function toggleCharacter() {
     actionskill = "SNTNL";
     cooldownValue = 60;
   }
-  
+
   if (cooldownValue) {
     actionInput.value = cooldownValue;
     const characterName = character.charAt(0).toUpperCase() + character.slice(1);
@@ -133,5 +133,44 @@ function toggleCharacter() {
   } else {
     actionInput.value = "";
     cooldownText.textContent = "Base Cooldown is";
+  }
+}
+
+function toggleStat() {
+  const stat = document.getElementById("stat").value;
+  const healthButton = document.querySelector('button[onclick="calculateHealthRegen()"]');
+  const shieldButton = document.querySelector('button[onclick="calculateShieldRegen()"]');
+  const maxHp = document.getElementById("maxHp");
+  const regen = document.getElementById("regen");
+  const second = document.getElementById("regen%");
+  const maxDef = document.getElementById("maxDef");
+  const recharge = document.getElementById("recharge");
+  const rr = document.getElementById("addrecharge");
+
+  if (stat === "null") {
+    healthButton.disabled = false;
+    shieldButton.disabled = false;
+  } else if (stat === "blue") {
+    healthButton.disabled = true;
+    shieldButton.disabled = false;
+    maxHp.disabled = true;
+    regen.disabled = true;
+    second.disabled = true;
+    hpLeft.disabled = true;
+    maxDef.disabled = false;
+    recharge.disabled = false;
+    rr.disabled = false;
+    shieldLeft.disabled = false;
+  } else {
+    healthButton.disabled = false;
+    shieldButton.disabled = true;
+    maxHp.disabled = false;
+    regen.disabled = false;
+    second.disabled = false;
+    hpLeft.disabled = false;
+    maxDef.disabled = true;
+    recharge.disabled = true;
+    rr.disabled = true;
+    shieldLeft.disabled = true;
   }
 }
