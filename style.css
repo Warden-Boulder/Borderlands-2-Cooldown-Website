@@ -1,3 +1,7 @@
+#additional {
+  margin-bottom: -35px;
+}
+
 body {
   background-color: darkred;
 }
@@ -12,7 +16,7 @@ footer {
   text-align: center;
 }
 
-button, #character, #game{
+button {
   background-color: #EAE0C8;
   border-radius: 15px;
   color: black;
@@ -22,6 +26,8 @@ button, #character, #game{
 
 #cooldown-text {
   font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: -20px;
   padding-top: 30px;
   white-space: pre-line;
 }
@@ -50,4 +56,18 @@ p,h2 {
 }
 .note {
   font-weight: bold;
+}
+
+#fast {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+#red {
+  color: red;
+}
+#blue {
+  color: blue;
+}
+select {
+ background-color: #EAE0C8;
 }
