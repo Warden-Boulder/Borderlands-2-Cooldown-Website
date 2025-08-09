@@ -25,11 +25,11 @@ function calculateHealthRegen() {
   let stat = "<p>Total Health Regen is " + totalRegen.toFixed(2) + " points per second";
   
   if (totalRegen.toFixed(2).endsWith('.00')) {
-      stat = "<p>Total Health Regen is " + totalRegen.toFixed(0) + " per second";
+      stat = "<p>Total Health Regen is " + totalRegen.toFixed(0) + " points per second";
     } else if (totalRegen.toFixed(2).endsWith('0')) {
-      stat = "<p>Total Health Regen is " + totalRegen.toFixed(1) + " per second";
+      stat = "<p>Total Health Regen is " + totalRegen.toFixed(1) + " points per second";
     } else {
-     stat = "<p>Total Health Regen is " + totalRegen.toFixed(2) + " per second";
+     stat = "<p>Total Health Regen is " + totalRegen.toFixed(2) + " points per second";
     } 
     
   document.getElementById("statresults").innerHTML = stat;
