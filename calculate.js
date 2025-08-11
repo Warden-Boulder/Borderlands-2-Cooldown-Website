@@ -43,8 +43,8 @@ function calculateShieldRegen() {
 
   let Recharge = maxDef*(second/100);
   let totalRecharge = Recharge+recharge;
-  let needed = maxDef * (missing/100);
-  let time = delay / (needed/totalRecharge);
+  let needed = maxDef / (missing/100);
+  let time = delay +(needed/totalRecharge);
   let stat = "<p>Total Recharge Rate is " + totalRecharge.toFixed(2) + " points per second<br>";
   let cycle = "<p>Total Recharge Time from " + missing +"% to 100% is " + time.toFixed(2) + " seconds";
   if (totalRecharge.toFixed(2).endsWith('.00')) {
