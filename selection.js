@@ -146,6 +146,7 @@ function toggleStat() {
   const maxDef = document.getElementById("maxDef");
   const recharge = document.getElementById("recharge");
   const rr = document.getElementById("addrecharge");
+  const delay = document.getElementById("delay");
 
   if (stat === "null") {
     healthButton.disabled = false;
@@ -161,6 +162,7 @@ function toggleStat() {
     recharge.disabled = false;
     rr.disabled = false;
     shieldLeft.disabled = false;
+    delay.disabled = false;
   } else {
     healthButton.disabled = false;
     shieldButton.disabled = true;
@@ -172,5 +174,6 @@ function toggleStat() {
     recharge.disabled = true;
     rr.disabled = true;
     shieldLeft.disabled = true;
+    delay.disabled = true;
   }
 }
