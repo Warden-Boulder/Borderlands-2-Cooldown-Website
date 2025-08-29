@@ -71,3 +71,12 @@ p,h2 {
 select {
  background-color: #EAE0C8;
 }
+summary {
+  color: yellow;
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+#calculate {
+  margin-bottom: 30px;
+}
