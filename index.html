@@ -1,96 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css">
-    <title>Vault Hunter's Toolbox</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="navigation.js"> </script>
+  <script src="toggles.js"> </script>
+  <title>The Nexus</title>
 </head>
 <body>
   <header>
-    <h1>Vault Hunter's Toolbox</h1>
-    <p>"Hello Vault Hunter, and welcome to <strong>The Toolbox</strong>, my corner of the EchoNet. This currently is a lightweight tool designed to help you know when your action skill will be available after each use so you can open more vaults. For peace of mind, Claptrap will have to climb stairs to get here."</p>
-     <p class="note">*EchoNet Patch: Vault Hunters, once I'm able to get past the Hyperion Blockade and able to upgrade my Catch-a-Ride terminal then I'll upgrade the toolbox to include our newest vault hunters.</p>
-  </header><br>
-    <details>
-        <summary class="underline">Cooldown Module</summary>
-        <p>Vault Hunter Selection:</p>
-    <select name="Character" id="character" onchange="toggleCharacter()">
+    <h1 class="underline">Warden's Outpost</h1>
+    <p class="welcome">Welcome, noble adventurers, to the <em><strong>Warden's Outpost</strong></em> — a haven for heroes and a hub for new quests. Rest, recover, and find your next adventure.</p><br>
+    <strong><p>Outpost Map: <select onchange="Nav()" id="select">
+      <option value="null">---Select---</option>
+      <optgroup label="Outpost Grounds">
+        <option value="about">About Me</option>
+      <option value="add">Add-Ons</option>
+      <option value="contact">Contact Me</option>
+      <option value="status">Status Board</option>
+      <option value="testimonials">Testimonials</option>
+      <option value="tos">TOS</option>
+    </select> | Toggles: <select name="toggle" id="toggles" onchange="toggleMode()">
     <option value="null">---Select---</option>
-    <optgroup label="Borderlands 1">
-        <option value="brick">Brick</option>
-        <option value="lilith">Lilith</option>
-        <option value="mordecai">Mordecai</option>
-        <option value="roland">Roland</option>
+    <optgroup label="Modes">
+    <option value="dark">Dark Mode</option>
+    <option value="light">Light Mode</option>
+    <option value="norm">Normal Mode</option>
     </optgroup>
-    <optgroup label="Borderlands 2">
-        <option value="Axton">Axton</option>
-        <option value="gaige">Gaige</option>
-        <option value="krieg">Krieg</option>
-        <option value="maya">Maya</option>
-        <option value="salvador">Salvador</option>
-        <option value="zero">Zer0</option>
-    </optgroup>
-    <optgroup label="Borderlands 3">
-        <option value="amara1">Amara (Phasecast)</option>
-        <option value="amara2">Amara (Phaseflare)</option>
-        <option value="amara3">Amara (Phasegrasp)</option>
-        <option value="amara4">Amara (Phaseslam)</option>
-        <option value="fl4k1">Fl4k (Fade Away)</option>
-        <option value="fl4k2">Fl4k (Gamma Burst)</option>
-        <option value="fl4k3">Fl4k (Gravity Snare)</option>
-        <option value="fl4k4">Fl4k (Rakk Attack)</option>
-        <option value="moze">Moze</option>
-        <option value="zane1">Zane (Barrier)</option>
-        <option value="zane2">Zane (Digi-Clone)</option>
-        <option value="zane3">Zane (MNTIS Shoulder Cannon)</option>
-        <option value="zane4">Zane (SNTNL)</option>
-    </optgroup>
-    <optgroup label="Borderlands: The Pre-Sequel">
-        <option value="Athena">Athena</option>
-        <option value="Aurelia">Aurelia</option>
-        <option value="Claptrap">Claptrap</option>
-        <option value="Jack">Jack</option>
-        <option value="Nisha">Nisha</option>
-        <option value="Wilhelm">Wilhelm</option>
-    </optgroup>
-</select><br>
-  <p id="cooldown-text"></p>
-  <input type="number" id="action" style="display: none;">
-  <p>Static Skill Buff = <input type="number" id="skills" placeholder="Static Skill % Increase"></input></p>
-  <p>Class Mod Buff = <input type="number" id="class_mod" placeholder ="Class Mod % Increase"></input></p>
-  <p>Relic Bonus = <input type="number" id="relic" placeholder="Relic % Increase"></input></p>
-    <p>Flat Cooldown Reduction = <input type="number" id="additional" placeholder="Avg. Reduction in Seconds"</input></p><br>
-    <div id="coolresults"></div>
-  <button id = "calculate" onclick="CalculateTotal()">Run the numbers</button><br>
-    </details>
-    <details>
-        <summary class="underline">Stat Regen Module</summary>
-        <p>Stat: <select name="Stat" id="stat" onchange="toggleStat()">
-        <option value="null">---Select---</option>
-        <option value="red" id="red">Health</option>
-        <option value="blue" id="blue">Shield</option>
-    </select>
-    </p>
-    <p>Max Health = <input placeholder="Enter Max Health" id="maxHp" /></p>
-    <p>Health Regen % = <input placeholder="Total from all sources" id="regen" /></p>
-    <p>Health Regen Per Second = <input placeholder="Total from all sources" id="regen%"/></p>
-    <p>Health Remaining = <input placeholder="Percent Left" id="hpLeft"/></p>
-    <p>Max Shield Capacity = <input placeholder="Enter Max Shield" id="maxDef" /></p>
-    <p>Recharge Rate = <input placeholder="Total from all sources" id="recharge" /></p>
-    <p>Additioanl Recharge Rates (percentage)= <input placeholder="Total from all sources" id="addrecharge" /></p>
-    <p>Shields Remaining = <input placeholder="Percent Remaining" id="shieldLeft"/></p>
-    <p>Recharge Delay = <input placeholder="Enter Delay" id="delay"/></p>
-  <div id="statresults"></div>
-  <button onclick="calculateHealthRegen()" id="red">Calculate Health</button>
-  <button onclick="calculateShieldRegen()" id="blue">Calculate Shield</button>
-    </details>
-  <script src="calculate.js"></script>
-  <script src="selection.js"></script>
+  </select>
+    </p></strong><br>
+  </header><br><br>
+  <p class="translation">Inkweaver's Sanctum</p>
+  <ul>
+    <li><a href="sanctum-board.html">Sanctum Registry Board</a></li>
+    <li><a href="inkweaver.html">Inkweaver Bindings</a></li>
+    <li>Dream Weavings</a></li>
+    <li>Lorekeeper Bindings</a></li>
+  </ul><br>
+  <p class="coding">Codewright's Forge</p>
+  <ul>
+    <li><a href="forge-board.html">Forge Order Board</a></li>
+    <li><a href="starter.html">Starter Forge</a></li>
+    <li><a href="apprentice.html">Apprentice Forge</a></li>
+    <li><a href="standard.html">Standard Forge</a></li>
+    <li><a href="masterwork.html">Masterwork Forge</a></li>
+    <li><a href="creation.html">Forge of Creation</a></li>
+  </ul><br><br>
   <footer>
-      Developed by Warden Boulder - Ex-Hyperion Employee turned Crimson Raider<br>
-      <a href="https://linktr.ee/no13boulder">Linktree</a><br>
-      Version 2.5<br>
-      Planned Updates:<br>
-      1. Language Support Update - Fr, De, Jp, Ru, Sp<br>
+<a href="https://linktr.ee/no13boulder"><em>Linktree</em></a>
   </footer>
 </body>
 </html>
