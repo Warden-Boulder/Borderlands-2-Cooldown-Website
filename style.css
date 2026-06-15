@@ -32,8 +32,13 @@ button {
   white-space: pre-line;
 }
 header {
+  border-bottom: 1px solid yellow;
   color: yellow;
+  font-size: 14px;
   font-style: italic;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px;
   text-align: center;
 }
 html {
@@ -79,4 +84,23 @@ summary {
 }
 #calculate {
   margin-bottom: 30px;
+}
+ol {
+  color: yellow;
+}
+
+ol a {
+  color: yellow;
+  text-decoration: none;
+}
+
+tr, td, th {
+  background-color: black;
+  border: 2px solid gold;
+  color: yellow;
+}
+
+th {
+  font-style: italic;
+  font-weight: bold;
 }
