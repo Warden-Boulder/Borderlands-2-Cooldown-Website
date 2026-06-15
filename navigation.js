@@ -1,5 +1,5 @@
 function nav() {
-   let navigationSelect = document.querySelector('nav');
+   let navigationSelect = document.querySelector('#nav');
    let selectedValue = navigationSelect.value;
 
    switch(selectedValue) {
