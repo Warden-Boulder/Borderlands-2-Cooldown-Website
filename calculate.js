@@ -13,92 +13,63 @@ function CalculateTotal() {
   document.getElementById("coolresults").innerHTML = resultsHTML;
 }
 
-function calculateHealthRegen() {
-  let maxHp = parseFloat(document.getElementById("maxHp").value) || 0;
-  let regen = parseFloat(document.getElementById("regen").value) || 0;
-  let second = parseFloat(document.getElementById("regen%").value) || 0;
-  let remaining = parseFloat(document.getElementById("hpLeft").value) || 0;
-  
-  let Regen = maxHp*(regen/100);
-  let totalRegen = Regen+second;
-  let needed = maxHp * (remaining/100);
-  let time = (needed/totalRegen)*60;
-  let stat = "<p>Total Health Regen is " + totalRegen.toFixed(2) + " points per second<br>";
-  let cycle = "<p>Total Regen Time from " + remaining +"% to 100% is " + time.toFixed(2) + " seconds";
-  
-  if (totalRegen.toFixed(2).endsWith('.00')) {
-      stat = "<p>Total Health Regen is " + totalRegen.toFixed(0) + " points per second<br>";
-      if (time.toFixed(2).endsWith('.00')) {
-        cycle = "<p>Total Regen Time from " + remaining +"% to 100% is " + time.toFixed(0) + " seconds";
-      } else if (time.toFixed(2).endsWith('0')) {
-        cycle = "<p>Total Regen Time from " + remaining +"% to 100% is " + time.toFixed(1) + " seconds";
-      } else {
-        cycle = "<p>Total Regen Time from " + remaining +"% to 100% is " + time.toFixed(2) + " seconds";
-      }
-    } else if (totalRegen.toFixed(2).endsWith('0')) {
-      stat = "<p>Total Health Regen is " + totalRegen.toFixed(1) + " points per second<br>";
-      if (time.toFixed(2).endsWith('.00')) {
-        cycle = "<p>Total Regen Time from " + remaining +"% to 100% is " + time.toFixed(0) + " seconds";
-      } else if (time.toFixed(2).endsWith('0')) {
-        cycle = "<p>Total Regen Time from " + remaining +"% to 100% is " + time.toFixed(1) + " seconds";
-      } else {
-        cycle = "<p>Total Regen Time from " + remaining +"% to 100% is " + time.toFixed(2) + " seconds";
-      }
-    } else {
-     stat = "<p>Total Health Regen is " + totalRegen.toFixed(2) + " points per second<br>";
-      if (time.toFixed(2).endsWith('.00')) {
-        cycle = "<p>Total Regen Time from " + remaining +"% to 100% is " + time.toFixed(0) + " seconds";
-      } else if (time.toFixed(2).endsWith('0')) {
-        cycle = "<p>Total Regen Time from " + remaining +"% to 100% is " + time.toFixed(1) + " seconds";
-      } else {
-        cycle = "<p>Total Regen Time from " + remaining +"% to 100% is " + time.toFixed(2) + " seconds";
-      }
-    } 
-    
-  document.getElementById("statresults").innerHTML = stat+cycle;
+function HealthRegen() {
+  let maxHpEl = document.getElementById("maxHp");
+  let regenEl = document.getElementById("regen");
+  let secondEl = document.getElementById("regenPercent");
+  let hpLeftEl = document.getElementById("hpLeft");
+  let out = document.getElementById("hpresults");
+  let stat = "";
+  let cycle = "";
+
+  let maxHp = parseFloat(maxHpEl.value) || 0;
+  let regen = parseFloat(regenEl.value) || 0;
+  let second = parseFloat(secondEl.value) || 0;
+  let remaining = parseFloat(hpLeftEl.value) || 0;
+
+  let Regen = maxHp * (regen / 100);
+  let totalRegen = Regen + second;
+
+  let needed = maxHp * ((100 - remaining) / 100);
+
+  let time = totalRegen > 0 ? (needed / totalRegen) : 0;
+
+  cycle = `Total Regen Time from ${remaining}% to 100% is ${time.toFixed(2)} seconds`;
+
+  stat = `Total Health Regen is ${totalRegen.toFixed(2)} points per second`;
+
+  out.innerHTML = `<p>${stat}<br>${cycle}</p>`;
 }
 
-function calculateShieldRegen() {
- let maxDef = parseFloat(document.getElementById("maxDef").value) || 0;
-  let recharge = parseFloat(document.getElementById("recharge").value) || 0;
-  let second = parseFloat(document.getElementById("addrecharge").value) || 0;
-  let missing = parseFloat(document.getElementById("shieldLeft").value) || 0;
-  let delay = parseFloat(document.getElementById("delay").value) || 0;
+function ShieldRegen() {
+  let maxShieldEl = document.getElementById("maxDef");
+  let rechargeEl = document.getElementById("recharge");
+  let addrechargeEl = document.getElementById("addrecharge");
+  let shieldLeftEl = document.getElementById("shieldLeft");
+  let delayEl = document.getElementById("delay");
 
-  let Recharge = maxDef*(second/100);
-  let totalRecharge = Recharge+recharge;
-  let needed = maxDef / (missing/100);
-  let time = delay + (needed/totalRecharge);
-  let stat = "<p>Total Recharge Rate is " + totalRecharge.toFixed(2) + " points per second<br>";
-  let cycle = "<p>Total Recharge Time from " + missing +"% to 100% is " + time.toFixed(2) + " seconds";
-  if (totalRecharge.toFixed(2).endsWith('.00')) {
-      stat = "<p>Total Recharge Rate is " + totalRecharge.toFixed(0) + " points per second<br>";
-      if (time.toFixed(2).endsWith('.00')) {
-        cycle = "<p>Total Recharge Time from " + missing +"% to 100% is " + time.toFixed(0) + " seconds";
-      } else if (time.toFixed(2).endsWith('0')) {
-        cycle = "<p>Total Recharge Time from " + missing +"% to 100% is " + time.toFixed(1) + " seconds";
-      } else {
-        cycle = "<p>Total Recharge Time from " + missing +"%  to 100% is " + time.toFixed(2) + " seconds";
-      }
-    } else if (totalRecharge.toFixed(2).endsWith('0')) {
-      stat = "<p>Total Recharge Rate is " + totalRecharge.toFixed(1) + " points per second<br>";
-      if (time.toFixed(2).endsWith('.00')) {
-        cycle = "<p>Total Recharge Time from " + missing +"% to 100% is " + time.toFixed(0) + " seconds";
-      } else if (time.toFixed(2).endsWith('0')) {
-        cycle = "<p>Total Recharge Time from " + missing +"% to 100% is " + time.toFixed(1) + " seconds";
-      } else {
-        cycle = "<p>Total Recharge Time from " + missing +"% to 100% is " + time.toFixed(2) + " seconds";
-      }
-    } else {
-     stat = "<p>Total Recharge Rate is " + totalRecharge.toFixed(2) + " points per second<br>";
-      if (time.toFixed(2).endsWith('.00')) {
-        cycle = "<p>Total Recharge Time from " + missing +"% to 100% is " + time.toFixed(0) + " seconds";
-      } else if (time.toFixed(2).endsWith('0')) {
-        cycle = "<p>Total Recharge Time from " + missing +"% to 100% is " + time.toFixed(1) + " seconds";
-      } else {
-        cycle = "<p>Total Recharge Time from " + missing +"% is " + time.toFixed(2) + " seconds";
-      }
-    } 
+  let out = document.getElementById("shieldresults");
 
-  document.getElementById("statresults").innerHTML = stat+cycle;
+  let maxShield = parseFloat(maxShieldEl.value) || 0;
+  let recharge = parseFloat(rechargeEl.value) || 0;
+  let addRecharge = parseFloat(addrechargeEl.value) || 0;
+  let remaining = parseFloat(shieldLeftEl.value) || 0;
+  let delay = parseFloat(delayEl.value) || 0;
+
+  remaining = Math.min(100, Math.max(0, remaining));
+
+  let rechargeBonus = recharge * (addRecharge / 100);
+  let totalRecharge = recharge + rechargeBonus;
+
+  let needed = maxShield * ((100 - remaining) / 100);
+
+  let rechargeTime = totalRecharge > 0 ? (needed / totalRecharge) : 0;
+
+  let totalTime = delay + rechargeTime;
+
+  let stat = `Total Shield Recharge is ${totalRecharge.toFixed(2)} points per second`;
+
+  let cycle = `Total Recharge Time from ${remaining}% to 100% is ${totalTime.toFixed(2)} seconds`;
+
+  out.innerHTML = `<p>${stat}<br>${cycle}</p>`;
 }
