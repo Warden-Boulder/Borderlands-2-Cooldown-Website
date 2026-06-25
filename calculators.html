@@ -2,7 +2,7 @@
 <html>
   <head>
   <link rel="stylesheet" href="style.css?v=2">
-  <script src="calculate.js"></script>
+  <script src="calculate.js?v=2"></script>
   <script src="selection.js"></script>
   <script src="navigation.js?v=2"></script>
 </head>
@@ -20,7 +20,7 @@
   <h2 class="underline">Purpose</h2>
   <p>These modules are designed to assist Vault Hunters in knowing how long till their Action Skills are ready for reuse and to know how long their shields/health will take to regenrate.</p><br>
    <details>
-        <summary class="underline">Cooldown Module</summary>
+        <summary class="underline">Skill Cooldown Module</summary>
         <p>Vault Hunter Selection:</p>
     <select name="Character cooldown" id="character" onchange="toggleCharacter()">
     <option value="null">---Select---</option>
@@ -72,24 +72,31 @@
   <button id = "calculate" onclick="CalculateTotal()">Run the numbers</button><br>
     </details>
    <details>
-        <summary class="underline">Stat Regen Module</summary>
-        <p>Stat: <select name="Stat" id="stat" onchange="toggleStat()">
-        <option value="null">---Select---</option>
-        <option value="red" id="red">Health</option>
-        <option value="blue" id="blue">Shield</option>
-    </select>
-    </p>
-    <p>Max Health = <input placeholder="Enter Max Health" id="maxHp" /></p>
+     <summary class="underline">Health Regen Module</summary>
+     <div class="card-holder">
+       <div class="card">
+         <p>Max Health = <input placeholder="Enter Max Health" id="maxHp" /></p>
     <p>Health Regen % = <input placeholder="Total from all sources" id="regen" /></p>
-    <p>Health Regen Per Second = <input placeholder="Total from all sources" id="regen%"/></p>
+    <p>Health Regen Per Second = <input placeholder="Total from all sources" id="regenPercent"/></p>
     <p>Health Remaining = <input placeholder="Percent Left" id="hpLeft"/></p>
-    <p>Max Shield Capacity = <input placeholder="Enter Max Shield" id="maxDef" /></p>
+         <button onclick="HealthRegen()" id="red">Health Report</button>
+         <div id="hpresults"></div>
+       </div>
+     </div>
+   </details>
+
+  <details>
+     <summary class="underline">Shield Regen Module</summary>
+    <div class="card-holder">
+       <div class="card">
+         <p>Max Shield Capacity = <input placeholder="Enter Max Shield" id="maxDef" /></p>
     <p>Recharge Rate = <input placeholder="Total from all sources" id="recharge" /></p>
     <p>Additioanl Recharge Rates (percentage)= <input placeholder="Total from all sources" id="addrecharge" /></p>
     <p>Shields Remaining = <input placeholder="Percent Remaining" id="shieldLeft"/></p>
     <p>Recharge Delay = <input placeholder="Enter Delay" id="delay"/></p>
-  <div id="statresults"></div>
-  <button onclick="calculateHealthRegen()" id="red">Calculate Health</button>
-  <button onclick="calculateShieldRegen()" id="blue">Calculate Shield</button>
-    </details>
+         <button onclick="ShieldRegen()" id="blue">Shield Report</button>
+         <div id="shieldresults"></div>
+       </div>
+     </div>
+   </details>
 </html>
